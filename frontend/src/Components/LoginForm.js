@@ -10,7 +10,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/user/login`, {
+    await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/user/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

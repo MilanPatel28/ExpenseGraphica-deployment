@@ -35,7 +35,7 @@ const AddExpense = () => {
                 'x-auth-token': token
             };
 
-            await axios.post(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/expenses`, formData, { headers }); // Update the URL with the correct backend address
+            await axios.post(`${process.env.REACT_APP_BACKEND_BASEURL}/expenses`, formData, { headers }); // Update the URL with the correct backend address
             // Clear form fields or show success message
             setFormData({
                 amount: '',

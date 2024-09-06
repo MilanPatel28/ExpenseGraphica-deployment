@@ -15,7 +15,7 @@ export default function StatementPage() {
   const fetchExpenses = async () => {
     try {
       const token = localStorage.getItem('x-auth-token');
-      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/expenses`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/expenses`, {
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': `${token}`
@@ -31,7 +31,7 @@ export default function StatementPage() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/expenses/${id}`, {
+      await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/expenses/${id}`, {
         method: 'DELETE'
       });
       setExpenses(expenses.filter(expense => expense._id !== id));
@@ -57,7 +57,7 @@ export default function StatementPage() {
     // Send a request to update the expense on the server
     // You need to implement this part according to your backend API
     // For example:
-    fetch(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/expenses/${editedExpense._id}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/expenses/${editedExpense._id}`, {
       method: 'PUT',
       body: JSON.stringify(editedExpense),
       headers: {

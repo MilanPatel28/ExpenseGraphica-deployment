@@ -12,7 +12,7 @@ const SignupForm = ({ onSignup }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Call signup function
-    const data = fetch(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/user/signup`, {
+    const data = fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/user/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const ColumnChart = () => {
   const fetchExpenses = async () => {
     try {
       const token = localStorage.getItem('x-auth-token');
-      const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_BASEURL}/expenses`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/expenses`, {
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': `${token}`
